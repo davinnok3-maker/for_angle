@@ -1,114 +1,116 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>A Message For You</title>
-    <style>
-        body {
-            background: linear-gradient(135deg, #0f172a 0%, #1e1b4b 100%);
-            color: #f1f5f9;
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-            margin: 0;
-            padding: 20px;
-            box-sizing: border-box;
-        }
-        .card {
-            background: rgba(30, 41, 59, 0.85);
-            backdrop-filter: blur(10px);
-            padding: 30px;
-            border-radius: 20px;
-            box-shadow: 0 15px 35px rgba(0,0,0,0.6);
-            width: 100%;
-            max-width: 400px;
-            text-align: center;
-            border: 1px solid rgba(255, 255, 255, 0.1);
-        }
-        .big-icon {
-            font-size: 4.5rem;
-            margin-bottom: 5px;
-            animation: bounce 2s infinite;
-        }
-        @keyframes bounce {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-8px); }
-        }
-        h2 { color: #f43f5e; margin-top: 0; font-size: 1.5rem; }
-        p { line-height: 1.7; font-size: 1rem; color: #cbd5e1; text-align: left; }
-        .code-block {
-            background: #0f172a;
-            padding: 14px;
-            border-radius: 8px;
-            font-family: 'Courier New', Courier, monospace;
-            font-size: 0.85rem;
-            color: #38bdf8;
-            text-align: left;
-            margin-bottom: 20px;
-            border: 1px solid #334155;
-            line-height: 1.5;
-        }
-        button {
-            background: linear-gradient(135deg, #f43f5e 0%, #e11d48 100%);
-            color: white;
-            border: none;
-            padding: 14px 28px;
-            font-size: 1rem;
-            font-weight: 600;
-            border-radius: 10px;
-            cursor: pointer;
-            width: 100%;
-            box-shadow: 0 4px 15px rgba(244, 63, 94, 0.4);
-            transition: transform 0.2s, opacity 0.2s;
-        }
-        button:active { transform: scale(0.97); }
-        .hidden { display: none; }
-        .signature {
-            margin-top: 25px;
-            font-style: italic;
-            color: #f43f5e;
-            text-align: right;
-            font-weight: 500;
-        }
-    </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A Message For You</title>
+    <style>
+        body {
+            background: linear-gradient(135deg, #0f172a 0%, #1e1b4b 100%);
+            color: #f1f5f9;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+        .card {
+            background: rgba(30, 41, 59, 0.85);
+            backdrop-filter: blur(10px);
+            padding: 30px;
+            border-radius: 20px;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.6);
+            width: 100%;
+            max-width: 400px;
+            text-align: center;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .big-icon {
+            font-size: 4.5rem;
+            margin-bottom: 5px;
+            animation: bounce 2s infinite;
+        }
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-8px); }
+        }
+        h2 { color: #f43f5e; margin-top: 0; font-size: 1.5rem; }
+        p { line-height: 1.7; font-size: 1rem; color: #cbd5e1; text-align: left; }
+        .code-block {
+            background: #0f172a;
+            padding: 14px;
+            border-radius: 8px;
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 0.85rem;
+            color: #38bdf8;
+            text-align: left;
+            margin-bottom: 20px;
+            border: 1px solid #334155;
+            line-height: 1.5;
+        }
+        button {
+            background: linear-gradient(135deg, #f43f5e 0%, #e11d48 100%);
+            color: white;
+            border: none;
+            padding: 14px 28px;
+            font-size: 1rem;
+            font-weight: 600;
+            border-radius: 10px;
+            cursor: pointer;
+            width: 100%;
+            box-shadow: 0 4px 15px rgba(244, 63, 94, 0.4);
+            transition: transform 0.2s, opacity 0.2s;
+        }
+        button:active { transform: scale(0.97); }
+        .hidden { display: none; }
+        .signature {
+            margin-top: 25px;
+            font-style: italic;
+            color: #f43f5e;
+            text-align: right;
+            font-weight: 500;
+        }
+    </style>
 </head>
 <body>
 
-    <div class="card">
-        <!-- Closed State / Initial View -->
-        <div id="closed-view">
-            <div class="big-icon">✉️</div>
-            <h2>Incoming Transmission</h2>
-            <div class="code-block">
-                <span>// origin: human on earth 🌍</span><br>
-                <span>let parcel = " 🐱🐱🐱";</span><br>
-                <span>status = "secret message loaded";</span>
-            </div>
-            <p style="text-align: center; margin-bottom: 25px;">Someone wrote something special and wanted you to see it.</p>
-            <button onclick="openLetter()">Open the Message</button>
-        </div>
+    <div class="card">
+        <!-- Closed State / Initial View -->
+        <div id="closed-view">
+            <div class="big-icon">✉️</div>
+            <h2>Incoming Transmission</h2>
+            <div class="code-block">
+                <span>// origin: human on earth 🌍</span><br>
+                <span>let parcel = " 🐱🐱🐱";</span><br>
+                <span>status = "secret message loaded";</span>
+            </div>
+            <p style="text-align: center; margin-bottom: 25px;">Someone wrote something special and wanted you to see it.</p>
+            <button onclick="openLetter()">Open the Message</button>
+        </div>
 
-        <!-- Open State / The actual letter -->
-        <div id="open-view" class="hidden">
-            <h2>Dear Angel Sokleap 👼,</h2>
-            <p>
-                how are you feeling today after sick day, better huh! and how about your study and sleeping schedule is it going smoothly? Most importantly, congratulations and I am so proud of you for getting through the worst of PMDD almost completely. 
-            </p>
-            <p>
-                I just wanted to send something a little different to make you smile today. Hope you prepare well for tomorrow. Best regards ^^
-            </p>
-            <div class="signature">- Davin</div>
-        </div>
-    </div>
+        <!-- Open State / The actual letter -->
+        <div id="open-view" class="hidden">
+            <h2>Dear Angel Sokleap 👼,</h2>
+            <p>
+                how are you feeling today after sick day, better huh! and how about your study and sleeping schedule is it going smoothly? Most importantly, congratulations and I am so proud of you for getting through the worst of PMDD almost completely. 
+            </p>
+            <p>
+                I just wanted to send something a little different to make you smile today. Hope you prepare well for tomorrow. Best regards ^^
+            </p>
+            <div class="signature">- Davin</div>
+        </div>
+    </div>
 
-    <script>
-        function openLetter() {
-            document.getElementById('closed-view').style.display = 'none';
-            document.getElementById('open-view').classList.remove('hidden');
-        }
-    </script>
+    <script>
+        function openLetter() {
+            document.getElementById('closed-view').style.display = 'none';
+            document.getElementById('open-view').classList.remove('hidden');
+        }
+    </script>
 </body>
 </html>
+
+i add letter with no heart so do u think it will work
