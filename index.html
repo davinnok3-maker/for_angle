@@ -28,6 +28,15 @@
             text-align: center;
             border: 1px solid rgba(255, 255, 255, 0.1);
         }
+        .big-icon {
+            font-size: 3.5rem;
+            margin-bottom: 10px;
+            animation: bounce 2s infinite;
+        }
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-6px); }
+        }
         h2 { color: #f43f5e; margin-top: 0; font-size: 1.5rem; }
         p { line-height: 1.7; font-size: 1rem; color: #cbd5e1; text-align: left; }
         .code-block {
@@ -71,7 +80,8 @@
     <div class="card">
         <!-- Closed State / Initial View -->
         <div id="closed-view">
-            <h2>Incoming Transmission</h2>
+            <div class="big-icon">💌</div>
+            <h2>Incoming Message</h2>
             <div class="code-block">
                 <span>// origin: human on earth 🌍</span><br>
                 <span>let parcel = "💌 + 🐱 + 👼";</span><br>
@@ -85,10 +95,10 @@
         <div id="open-view" class="hidden">
             <h2>Dear Angel Sokleap,</h2>
             <p>
-                Are you feel well today and how about ur study and sleeping schedule is it going smoothly. Most importancely is congrat and proud of you for getting through the worst of PMDD almost completely. 
+                Are you feeling well today, and how about your study and sleeping schedule—is it going smoothly? Most importantly, congratulations and I am so proud of you for getting through the worst of PMDD almost completely. 
             </p>
             <p>
-                I just wanted to send something a little different to make you smile today. hope you prepare well for tmr. Best regard ^^
+                I just wanted to send something a little different to make you smile today. Hope you prepare well for tomorrow. Best regards ^^
             </p>
             <div class="signature">- Davin</div>
         </div>
